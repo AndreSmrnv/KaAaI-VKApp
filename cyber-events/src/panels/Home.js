@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GameIconsCarousel from './GameIconsCarousel';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
+		<PanelHeader>Cyber Events</PanelHeader>
+		{/* {fetchedUser &&
 		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
@@ -14,15 +15,17 @@ const Home = ({ id, go, fetchedUser }) => (
 			>
 				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
 			</Cell>
-		</Group>}
+		</Group>} */}
 
-		<Group header={<Header mode="secondary">Navigation Example</Header>}>
+		<GameIconsCarousel />
+
+		{/* <Group header={<Header mode="secondary">Navigation Example</Header>}>
 			<Div>
 				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
 					Show me the Persik, please
 				</Button>
 			</Div>
-		</Group>
+		</Group> */}
 	</Panel>
 );
 
