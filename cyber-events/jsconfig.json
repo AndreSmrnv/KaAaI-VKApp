@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/src/*": [
+            "src/*"
+        ],
+        "@/panels/*": [
+            "src/panels/*"
+        ],
+        "@/constants/*": [
+            "src/constants/*"
+        ],
+        "@/components/*": [
+            "src/components/*"
+        ],
+        "@/contexts/*": [
+            "src/contexts/*"
+        ],
+        "@/services/*": [
+            "src/services/*"
+        ],
+        "@/styles/*": [
+            "src/styles/*"
+        ],
+        "@/db/*": [
+            "src/services/db/*"
+        ]
+      }
+  }  
+}
