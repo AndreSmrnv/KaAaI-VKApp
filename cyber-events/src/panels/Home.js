@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GameIconsCarousel from './GameIconsCarousel';
+import GameIconsCarousel from '../components/GameIconsCarousel';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 

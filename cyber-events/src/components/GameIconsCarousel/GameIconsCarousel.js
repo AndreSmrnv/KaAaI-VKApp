@@ -1,9 +1,9 @@
 import React from 'react';
 import { Panel, Div } from '@vkontakte/vkui';
-import dota from '../img/dota.svg';
-import wot from '../img/wot.svg';
-import pubg from '../img/pubg.svg';
-import cs from '../img/cs.svg';
+import dota from '../../img/dota.svg';
+import wot from '../../img/wot.svg';
+import pubg from '../../img/pubg.svg';
+import cs from '../../img/cs.svg';
 import classes from './GameIconsCarousel.module.css';
 
 const GameIconsCarousel = ({ id }) => {
