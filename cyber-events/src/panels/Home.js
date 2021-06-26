@@ -4,6 +4,7 @@ import GameIconsCarousel from '../components/GameIconsCarousel';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 import EventsCarousel from '../components/EventsCarousel';
+import UpcomingEventsCarousel from '../components/EventsCarousel/UpcomingEventsCarousel';
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -21,6 +22,8 @@ const Home = ({ id, go, fetchedUser }) => (
 		<GameIconsCarousel />
 
 		<EventsCarousel />
+
+		<UpcomingEventsCarousel />
 
 		{/* <Group header={<Header mode="secondary">Navigation Example</Header>}>
 			<Div>

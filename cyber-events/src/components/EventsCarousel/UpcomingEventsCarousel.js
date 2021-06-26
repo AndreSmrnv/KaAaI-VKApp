@@ -2,13 +2,13 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
-import imageUrl from '../../img/card_img1.svg';
+import imageUrl from '../../img/card_img2.svg';
 import classes from './EventsCarousel.module.css';
 import SwiperCore, { Scrollbar } from 'swiper/core';
 
 SwiperCore.use([Scrollbar]);
 
-const TodayEventsCarousel = () => {
+const UpcomingEventsCarousel = () => {
     const slides = [];
 
     for (let i = 0; i < 3; i++) {
@@ -19,10 +19,10 @@ const TodayEventsCarousel = () => {
                 style={{ backgroundImage: `url(${imageUrl})` }}
             >
                 <div className={classes.contentWrapper}>
-                    <h2 className={classes.title}>World of Tanks</h2>
-                    <p className={classes.txt}>Самый горячий турнир</p>
-                    <p className={classes.txt}>29 июня | 20:00</p>
-                    <button className={classes.btn}>Участвовать</button>
+                    <h2 className={classes.title}>World of Warships</h2>
+                    <p className={classes.txt}>Запись открыта (6/12)</p>
+                    <p className={classes.txt}>12 июля | 21:00</p>
+                    <button className={classes.btn}>Я иду!</button>
                 </div>
             </SwiperSlide>
         );
@@ -44,4 +44,4 @@ const TodayEventsCarousel = () => {
     );
 };
 
-export default TodayEventsCarousel;
+export default UpcomingEventsCarousel;
