@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import GameIconsCarousel from '../components/GameIconsCarousel';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import EventsCarousel from '../components/EventsCarousel';
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -18,6 +19,8 @@ const Home = ({ id, go, fetchedUser }) => (
 		</Group>} */}
 
 		<GameIconsCarousel />
+
+		<EventsCarousel />
 
 		{/* <Group header={<Header mode="secondary">Navigation Example</Header>}>
 			<Div>
