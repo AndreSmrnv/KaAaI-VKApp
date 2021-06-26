@@ -1,1 +1,1 @@
-export { default } from './EventsCarousel';
+export { default } from './TodayEventsCarousel';

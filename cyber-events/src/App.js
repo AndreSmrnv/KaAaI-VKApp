@@ -5,12 +5,12 @@ import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
+// import Persik from './panels/Persik';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
-	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	// const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -23,7 +23,7 @@ const App = () => {
 		async function fetchData() {
 			const user = await bridge.send('VKWebAppGetUserInfo');
 			setUser(user);
-			setPopout(null);
+			// setPopout(null);
 		}
 		fetchData();
 	}, []);
@@ -35,9 +35,12 @@ const App = () => {
 	return (
 		<AdaptivityProvider>
 			<AppRoot>
-				<View activePanel={activePanel} popout={popout}>
+				<View 
+					activePanel={activePanel} 
+					// popout={popout}
+				>
 					<Home id='home' fetchedUser={fetchedUser} go={go} />
-					<Persik id='persik' go={go} />
+					{/* <Persik id='persik' go={go} /> */}
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
