@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.slide {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slide.active {
+    width: 75px;
+    height: 75px;
+}
+
+.mr10 {
+    margin-right: 50px;
+}
