@@ -5,10 +5,14 @@ import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
 
 import Home from './panels/Home';
+import Event from './panels/Event';
+import Profile from './panels/Profile';
+import Favorites from './panels/Favorites';
 import Persik from './panels/Persik';
 import dataEvents from './services/db/events';
-import { EventsContext } from './contexts/eventsContext';
-import { INITIAL_EVENTS } from './constants/initEvents';
+import { EventsContext } from './services/contexts/eventsContext';
+import { INITIAL_EVENTS } from './services/constants/initEvents';
+import { HOME, EVENT, USER_PROFILE, FAVORITES  } from './services/constants/initViews';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -44,7 +48,10 @@ const App = () => {
 			<EventsContext.Provider value={{ events, setEvents }}>
 				<AppRoot>
 					<View activePanel={activePanel} popout={popout}>
-						<Home id='home' fetchedUser={fetchedUser} go={go} />
+						<Home id={ HOME} fetchedUser={fetchedUser} go={go} />
+						<Event id={EVENT} go={go} />
+						<Favorites id={FAVORITES} go={go} />
+						<Profile id={USER_PROFILE} go={go} />
 						<Persik id='persik' go={go} />
 					</View>
 				</AppRoot>

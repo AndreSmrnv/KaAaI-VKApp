@@ -1,6 +1,6 @@
 import React, { useContext, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { EventsContext } from '../contexts/eventsContext';
+import { EventsContext } from '../services/contexts/eventsContext';
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 import GameIconsCarousel from '../components/GameIconsCarousel';
 import TodayEventsCarousel from '../components/EventsCarousel/TodayEventsCarousel';
@@ -15,7 +15,7 @@ const Home = ({ id, go, fetchedUser }) => {
 
 			<GameIconsCarousel />
 
-			<TodayEventsCarousel />
+			<TodayEventsCarousel go={ go } />
 
 			<UpcomingEventsCarousel />
 
