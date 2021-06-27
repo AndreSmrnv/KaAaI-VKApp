@@ -15,8 +15,6 @@ import { EventsContext } from './services/contexts/eventsContext';
 import { INITIAL_EVENTS } from './services/constants/initEvents';
 import { HOME, EVENT, USER_PROFILE, FAVORITES  } from './services/constants/initViews';
 
-
-
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
@@ -34,7 +32,7 @@ const App = () => {
 		async function fetchData() {
 			const user = await bridge.send('VKWebAppGetUserInfo');
 			setUser(user);
-			setPopout(null);
+			// setPopout(null);
 		}
 		fetchData();
 		setPopout(null);  // TODO потом убрать блок спинера загрузки данных

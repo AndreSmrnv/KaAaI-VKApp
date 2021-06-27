@@ -22,7 +22,7 @@ const UpcomingEventsCarousel = () => {
                     <h2 className={classes.title}>World of Warships</h2>
                     <p className={classes.txt}>Запись открыта (6/12)</p>
                     <p className={classes.txt}>12 июля | 21:00</p>
-                    <button className={classes.btn}>Я иду!</button>
+                    <button className={classes.btn}>Участвовать</button>
                 </div>
             </SwiperSlide>
         );
