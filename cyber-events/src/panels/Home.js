@@ -12,13 +12,19 @@ const Home = ({ id, go, fetchedUser }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader>Cyber Events</PanelHeader>
-
+			<PanelHeader  >Cyber Events</PanelHeader>
+			
 			<GameIconsCarousel />
-
-			<TodayEventsCarousel go={ go } />
-
-			<UpcomingEventsCarousel />
+			<Group
+				header={<Header>Турниры сегодня</Header>}
+			>
+				<TodayEventsCarousel go={ go }/>
+			</Group>
+			<Group
+				header={<Header>Турниры скоро</Header>}
+			>
+				<UpcomingEventsCarousel />
+			</Group>
 
 			<Navigation />
 

@@ -1,5 +1,6 @@
 
 export const INITIAL_EVENTS = {
-    data: []
-  
+    data: [],
+    currEvent: {},
+    games: []
   };
