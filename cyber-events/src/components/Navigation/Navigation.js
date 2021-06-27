@@ -59,7 +59,6 @@ class Navigation extends React.Component {
                   </TabsItem>
                 </HorizontalScroll>
               </Tabs>
-              <CellButton onClick={() => this.setState({ activePanel: 'panel4' })}>Табы-кнопки</CellButton>
             </Group>
           </Panel>
         </View>
