@@ -14,11 +14,9 @@ class Navigation extends React.Component {
         activePanel: 'panel1',
         contextOpened: false,
         mode: 'all',
-        activeTab1: 'recomendations',
-        activeTab2: 'music',
-        activeTab3: 'news',
-        activeTab4: 'all',
-        activeTab5: 'all',
+        activeTab1: 'events',
+        activeTab2: 'favorite',
+        activeTab3: 'user-profile',
       };
 
       this.select = this.select.bind(this);
@@ -37,22 +35,22 @@ class Navigation extends React.Component {
               <Tabs>
                 <HorizontalScroll>
                   <TabsItem
-                    onClick={() => this.setState({ activeTab3: 'news' })}
-                    selected={this.state.activeTab3 === 'news'}
+                    onClick={() => this.setState({ activeTab1: 'events' })}
+                    selected={this.state.activeTab1 === 'events'}
                   >
                     <Icon24NewsfeedOutline style={{margin: 'auto'}} />
                     События
                   </TabsItem>
                   <TabsItem
-                    onClick={() => this.setState({ activeTab3: 'recomendations' })}
-                    selected={this.state.activeTab3 === 'recomendations'}
+                    onClick={() => this.setState({ activeTab1: 'favorite' })}
+                    selected={this.state.activeTab1 === 'favorite'}
                   >
                     <Icon24FavoriteOutline style={{margin: 'auto'}} />
                     Избранное
                   </TabsItem>
                   <TabsItem
-                    onClick={() => this.setState({ activeTab3: 'friends' })}
-                    selected={this.state.activeTab3 === 'friends'}
+                    onClick={() => this.setState({ activeTab1: 'user-profile' })}
+                    selected={this.state.activeTab1 === 'user-profile'}
                   >
                     <Icon24UserCircleOutline style={{margin: 'auto'}} />
                     Профиль
