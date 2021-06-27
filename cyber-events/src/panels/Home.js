@@ -1,9 +1,8 @@
 import React, { useContext, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import GameIconsCarousel from '../components/GameIconsCarousel';
-
 import { EventsContext } from '../contexts/eventsContext';
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import GameIconsCarousel from '../components/GameIconsCarousel';
 import TodayEventsCarousel from '../components/EventsCarousel/TodayEventsCarousel';
 import UpcomingEventsCarousel from '../components/EventsCarousel/UpcomingEventsCarousel';
 
@@ -12,7 +11,7 @@ const Home = ({ id, go, fetchedUser }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader  >Cyber Events</PanelHeader>
+			<PanelHeader>Cyber Events</PanelHeader>
 
 			<GameIconsCarousel />
 

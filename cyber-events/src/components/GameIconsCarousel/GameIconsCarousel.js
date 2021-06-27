@@ -11,9 +11,9 @@ const GameIconsCarousel = ({ id }) => {
     return (
         <Group>
             <Div className={classes.container}>
-                <img src={dota} className={classes.slide + ' ' + classes.mr10} />
-                <img src={wot} className={classes.slide + ' ' + classes.mr10} />
-                <img src={pubg} className={classes.slide + ' ' + classes.mr10} />
+                <img src={dota} className={classes.slide + ' ' + classes.mr25} />
+                <img src={wot} className={classes.slide + ' ' + classes.mr25} />
+                <img src={pubg} className={classes.slide + ' ' + classes.mr25} />
                 <img src={cs} className={classes.slide} />
             </Div>
         </Group>
