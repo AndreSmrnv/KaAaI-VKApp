@@ -42,8 +42,8 @@ const App = () => {
 	}, []);
 	//console.log(dataEvents);
 	console.log(events.data);
-	const go = e => {
-		setActivePanel(e.currentTarget.dataset.to);
+	const go = e => {		
+		setActivePanel(e.currentTarget.dataset.to);		
 	};
 
 	return (

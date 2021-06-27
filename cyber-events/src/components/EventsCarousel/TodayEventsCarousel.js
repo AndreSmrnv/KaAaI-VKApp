@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from 'react';
 import { EventsContext } from '../../services/contexts/eventsContext';
-
+import { EVENT } from '../../services/constants/initViews';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
@@ -12,6 +12,11 @@ SwiperCore.use([Scrollbar]);
 
 const TodayEventsCarousel = ({ go }) => {
     const { events, setEvents } = useContext(EventsContext);
+    const handleClick = (event) => {
+        setEvents(prev=> ({...prev, currEvent: events.data.find(item=>item.id == event.currentTarget.dataset.id)}));
+        go(event)
+        };
+      
     const slides = events.data &&
         [...events.data.map((item, index) => {
             return (
@@ -21,7 +26,9 @@ const TodayEventsCarousel = ({ go }) => {
                     style={{ backgroundImage: `url(${imageUrl})` }}
                 >
                     <div className={classes.contentWrapper}
-                        onClick={go} data-to="event"
+                        onClick={handleClick}
+                        data-to={EVENT}
+                        data-id={item.id}
                     >
                         <h2 className={classes.title}>{item.name}</h2>
                         <p className={classes.txt}>{item.description}</p>
@@ -35,7 +42,7 @@ const TodayEventsCarousel = ({ go }) => {
         )] 
 
         ;
-    console.log(slides);
+    //console.log(slides);
         // [];
 
     // for (let i = 0; i < 3; i++) {

@@ -16,7 +16,7 @@ const Event = props => {
 			<PanelHeader
 				left={<PanelHeaderBack onClick={props.go} data-to={HOME} />}
 			>
-				Турнир { }
+				Турнир {events.currEvent.name}
 			</PanelHeader>
 			<img className="Persik" src={persik} alt="Persik The Cat" />
 		</Panel>
