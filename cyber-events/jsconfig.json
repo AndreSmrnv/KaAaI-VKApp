@@ -20,6 +20,9 @@
         "@/services/*": [
             "src/services/*"
         ],
+        "@/img/*": [
+            "src/img/*"
+        ],
         "@/styles/*": [
             "src/styles/*"
         ],

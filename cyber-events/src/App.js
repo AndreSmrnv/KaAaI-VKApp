@@ -5,12 +5,16 @@ import '@vkontakte/vkui/dist/vkui.css';
 import './App.css';
 
 import Home from './panels/Home';
-// import Persik from './panels/Persik';
+import Persik from './panels/Persik';
+import dataEvents from './services/db/events';
+import { EventsContext } from './contexts/eventsContext';
+import { INITIAL_EVENTS } from './constants/initEvents';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
-	// const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [events, setEvents] = useState(INITIAL_EVENTS);
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -26,23 +30,25 @@ const App = () => {
 			// setPopout(null);
 		}
 		fetchData();
+		setPopout(null);  // TODO потом убрать блок спинера загрузки данных
+		setEvents(prev=> ({...prev, data: dataEvents}));
 	}, []);
-
+	//console.log(dataEvents);
+	console.log(events.data);
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
 	return (
 		<AdaptivityProvider>
-			<AppRoot>
-				<View 
-					activePanel={activePanel} 
-					// popout={popout}
-				>
-					<Home id='home' fetchedUser={fetchedUser} go={go} />
-					{/* <Persik id='persik' go={go} /> */}
-				</View>
-			</AppRoot>
+			<EventsContext.Provider value={{ events, setEvents }}>
+				<AppRoot>
+					<View activePanel={activePanel} popout={popout}>
+						<Home id='home' fetchedUser={fetchedUser} go={go} />
+						<Persik id='persik' go={go} />
+					</View>
+				</AppRoot>
+			</EventsContext.Provider>	
 		</AdaptivityProvider>
 	);
 }
