@@ -4,7 +4,7 @@ import GameIconsCarousel from '../components/GameIconsCarousel';
 import EventsCarousel from '../components/EventsCarousel';
 import UpcomingEventsCarousel from '../components/EventsCarousel/UpcomingEventsCarousel';
 
-import { EventsContext } from '../contexts/eventsContext';
+import { EventsContext } from '../services/contexts/eventsContext';
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 
 const Home = ({ id, go, fetchedUser }) => {
@@ -16,7 +16,7 @@ const Home = ({ id, go, fetchedUser }) => {
 
 			<GameIconsCarousel />
 
-			<EventsCarousel />
+			<EventsCarousel go={ go }/>
 
 			<UpcomingEventsCarousel />
 
