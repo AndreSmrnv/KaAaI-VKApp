@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, Tabs, withAdaptivity, View, TabsItem, HorizontalScroll } from '@vkontakte/vkui';
+import { Panel, Tabs, withAdaptivity, View, TabsItem, Group, HorizontalScroll } from '@vkontakte/vkui';
 import { Icon24NewsfeedOutline, Icon24FavoriteOutline, Icon24UserCircleOutline } from '@vkontakte/icons';
 import classes from './Navigation.module.css';
 
