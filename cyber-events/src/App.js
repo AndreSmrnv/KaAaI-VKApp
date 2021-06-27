@@ -32,9 +32,10 @@ const App = () => {
 			setPopout(null);
 		}
 		fetchData();
+		setPopout(null);  // TODO потом убрать блок спинера загрузки данных
 		setEvents(prev=> ({...prev, data: dataEvents}));
 	}, []);
-	console.log(dataEvents);
+	//console.log(dataEvents);
 	console.log(events.data);
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);

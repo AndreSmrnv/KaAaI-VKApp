@@ -1,6 +1,9 @@
 import React, { useContext, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import GameIconsCarousel from '../components/GameIconsCarousel';
+import EventsCarousel from '../components/EventsCarousel';
+import UpcomingEventsCarousel from '../components/EventsCarousel/UpcomingEventsCarousel';
+
 import { EventsContext } from '../contexts/eventsContext';
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 
@@ -11,7 +14,13 @@ const Home = ({ id, go, fetchedUser }) => {
 		<Panel id={id}>
 			<PanelHeader  >Cyber Events</PanelHeader>
 
-			{events.data && events.data[0] && (
+			<GameIconsCarousel />
+
+			<EventsCarousel />
+
+			<UpcomingEventsCarousel />
+
+			{/* {events.data && events.data[0] && (
 				<Group header={<Header mode="secondary"> Data Fetched with Game</Header>}>
 					<Cell
 						before={events.data[0].image_mobile ? <Avatar src={events.data[0].image_mobile}/> : null}
@@ -21,7 +30,7 @@ const Home = ({ id, go, fetchedUser }) => {
 					</Cell>
 				</Group>
 				)
-			}
+			} */}
 
 			{/* <GameIconsCarousel /> */}
 
