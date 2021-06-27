@@ -8,12 +8,13 @@ import Home from './panels/Home';
 import Event from './panels/Event';
 import Profile from './panels/Profile';
 import Favorites from './panels/Favorites';
+import Frends from './panels/Frends';
 import Persik from './panels/Persik';
 import dataEvents from './services/db/events';
 import dataGames from './services/db/games';
 import { EventsContext } from './services/contexts/eventsContext';
 import { INITIAL_EVENTS } from './services/constants/initEvents';
-import { HOME, EVENT, USER_PROFILE, FAVORITES  } from './services/constants/initViews';
+import { HOME, EVENT, USER_PROFILE, FAVORITES, JOIN_FRENDS  } from './services/constants/initViews';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -53,6 +54,7 @@ const App = () => {
 						<Event id={EVENT} go={go} />
 						<Favorites id={FAVORITES} go={go} />
 						<Profile id={USER_PROFILE} go={go} />
+						<Frends id={JOIN_FRENDS} go={go} />
 						<Persik id='persik' go={go} />
 					</View>
 				</AppRoot>
