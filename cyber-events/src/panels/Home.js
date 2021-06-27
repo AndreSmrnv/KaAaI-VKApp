@@ -1,10 +1,11 @@
 import React, { useContext, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { EventsContext } from '../services/contexts/eventsContext';
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Tabs } from '@vkontakte/vkui';
 import GameIconsCarousel from '../components/GameIconsCarousel';
 import TodayEventsCarousel from '../components/EventsCarousel/TodayEventsCarousel';
 import UpcomingEventsCarousel from '../components/EventsCarousel/UpcomingEventsCarousel';
+import Navigation from '../components/Navigation';
 
 const Home = ({ id, go, fetchedUser }) => {
 	const { events, setEvents } = useContext(EventsContext);
@@ -18,6 +19,8 @@ const Home = ({ id, go, fetchedUser }) => {
 			<TodayEventsCarousel go={ go } />
 
 			<UpcomingEventsCarousel />
+
+			<Navigation />
 
 			{/* {events.data && events.data[0] && (
 				<Group header={<Header mode="secondary"> Data Fetched with Game</Header>}>
