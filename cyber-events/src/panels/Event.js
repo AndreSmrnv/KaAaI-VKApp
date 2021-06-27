@@ -18,11 +18,7 @@ const Event = props => {
 			>
 				Турнир {events.games.find(item => item.id == events.currEvent.game_id).name}
 			</PanelHeader>
-			<Group
-				header={<Header>{events.currEvent.name}</Header>}
-				>
-				
-
+			<Group>
 				<Banner
 					mode="image"
 					size="m"
