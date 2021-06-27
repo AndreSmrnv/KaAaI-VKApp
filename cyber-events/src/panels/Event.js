@@ -10,7 +10,9 @@ import './Persik.css';
 
 const Event = props => {
 	const { events, setEvents } = useContext(EventsContext);
-
+	const onClickJoin = () => 
+		setEvents(prev => ({ ...prev, join: !prev.join }));
+	;
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -73,12 +75,36 @@ const Event = props => {
 				<SimpleCell indicator="47" >
 					Количество игроков
 				</SimpleCell>
+				<Div >
+					{events.join ?
+						(
+							<Button stretched
+							mode="secondary"
+							onClick={onClickJoin}
+								size="l"
+							>
+									Отменить участие
+							</Button>
+						) :
+						(
+							<Button stretched
+								onClick={onClickJoin}
+								size="l"
+							>
+									Участвовать
+							</Button>
+						)
+					}
+				</Div>
 				<Div>
 					<Button stretched
-						
-						size="l">
-					Участвовать
+						mode="outline"
+						size="l"
+						disabled={  !events.join } 
+					>
+						Пригласить друзей
 					</Button>
+					
       			</Div>
 			</Group>
 
