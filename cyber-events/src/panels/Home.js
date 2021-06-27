@@ -13,12 +13,18 @@ const Home = ({ id, go, fetchedUser }) => {
 	return (
 		<Panel id={id}>
 			<PanelHeader  >Cyber Events</PanelHeader>
-
+			
 			<GameIconsCarousel />
-
-			<EventsCarousel go={ go }/>
-
-			<UpcomingEventsCarousel />
+			<Group
+				header={<Header>Турниры сегодня</Header>}
+			>
+				<EventsCarousel go={ go }/>
+			</Group>
+			<Group
+				header={<Header>Турниры скоро</Header>}
+			>
+				<UpcomingEventsCarousel />
+			</Group>	
 
 			{/* {events.data && events.data[0] && (
 				<Group header={<Header mode="secondary"> Data Fetched with Game</Header>}>
