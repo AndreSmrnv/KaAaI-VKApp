@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { Panel, PanelHeader, PanelHeaderBack } from '@vkontakte/vkui';
@@ -10,7 +10,7 @@ import './Persik.css';
 
 const Event = props => {
 	const { events, setEvents } = useContext(EventsContext);
-	
+
 	return (
 		<Panel id={props.id}>
 			<PanelHeader

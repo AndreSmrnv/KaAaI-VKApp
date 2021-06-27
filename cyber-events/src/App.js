@@ -10,6 +10,7 @@ import Profile from './panels/Profile';
 import Favorites from './panels/Favorites';
 import Persik from './panels/Persik';
 import dataEvents from './services/db/events';
+import dataGames from './services/db/games';
 import { EventsContext } from './services/contexts/eventsContext';
 import { INITIAL_EVENTS } from './services/constants/initEvents';
 import { HOME, EVENT, USER_PROFILE, FAVORITES  } from './services/constants/initViews';
@@ -37,7 +38,7 @@ const App = () => {
 		}
 		fetchData();
 		setPopout(null);  // TODO потом убрать блок спинера загрузки данных
-		setEvents(prev=> ({...prev, data: dataEvents}));
+		setEvents(prev=> ({...prev, data: dataEvents, games: dataGames}));
 	}, []);
 	//console.log(dataEvents);
 	console.log(events.data);
