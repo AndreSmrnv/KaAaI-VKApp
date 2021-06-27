@@ -1,18 +1,72 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, PanelHeaderBack, Banner, Group, Button, Header, SimpleCell, Div, RichCell } from '@vkontakte/vkui';
-import { HOME } from '../services/constants/initViews';
+import {
+	Panel,
+	PanelHeader,
+	PanelHeaderBack,
+	Banner,
+	Group,
+	Button,
+	Header,
+	SimpleCell,
+	Div,
+	RichCell,
+	ModalRoot,
+	ModalPage,
+	ModalPageHeader,
+	PanelHeaderClose,
+	PanelHeaderButton,
+	IconButton,
+	Avatar,
+	CellButton
+} from '@vkontakte/vkui';
+import {
+	Icon24Dismiss,
+	Icon28PhoneOutline,
+	Icon28MailOutline,
+	Icon28KeyOutline,
+	Icon28CheckShieldDeviceOutline,
+	Icon28DevicesOutline,
+	Icon16MoreVertical
+} from '@vkontakte/icons';
+import { HOME, JOIN_FRENDS } from '../services/constants/initViews';
 import { EventsContext } from '../services/contexts/eventsContext';
 import imageUrl from '../img/card_img1.svg';
 import persik from '../img/persik.png';
 import './Persik.css';
 
+
+
+
 const Event = props => {
 	const { events, setEvents } = useContext(EventsContext);
+	const [isModalOpened, setIsModalOpened] = useState(false);
 	const onClickJoin = () => 
 		setEvents(prev => ({ ...prev, join: !prev.join }));
 	;
+
+	// const modal = (
+	// 	<ModalRoot
+	// 	  activeModal={isModalOpened ? MODAL_NAME : null}
+	// 	  onClose={() =>  setIsModalOpened(false)}
+	// 	>
+	// 	  <ModalPage
+	// 		id={MODAL_NAME}
+	// 		onClose={() =>  setIsModalOpened(false)}
+	// 		header={
+	// 		  <ModalPageHeader
+	// 			left={ <PanelHeaderClose onClick={() =>  setIsModalOpened(false)} />}
+	// 			right={<PanelHeaderButton onClick={() =>  setIsModalOpened(false)}><Icon24Dismiss /></PanelHeaderButton>}
+	// 		  >
+	// 			Group в модальном окне
+	// 		  </ModalPageHeader>
+	// 		}
+	// 	  >
+	// 		{renderGroup()}
+	// 	  </ModalPage>
+	// 	</ModalRoot>
+	//   );
 	return (
 		<Panel id={props.id}>
 			<PanelHeader
@@ -38,7 +92,7 @@ const Event = props => {
 					/>
 					}
 					asideMode="dismiss"
-					actions={<Button mode="overlay_primary" size="m">активен</Button>}
+					actions={<Button mode="overlay_secondary" size="m">АКТИВЕН</Button>}
 				/>
 			</Group>
 			{/* <Group>
@@ -100,7 +154,8 @@ const Event = props => {
 					<Button stretched
 						mode="outline"
 						size="l"
-						disabled={  !events.join } 
+						disabled={!events.join} 
+						onClick={props.go} data-to={JOIN_FRENDS}
 					>
 						Пригласить друзей
 					</Button>
@@ -118,3 +173,4 @@ Event.propTypes = {
 };
 
 export default Event;
+
