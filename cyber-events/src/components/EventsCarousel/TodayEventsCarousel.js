@@ -8,7 +8,7 @@ import SwiperCore, { Scrollbar } from 'swiper/core';
 
 SwiperCore.use([Scrollbar]);
 
-const TodayEventsCarousel = () => {
+const TodayEventsCarousel = ({ go }) => {
     const slides = [];
 
     for (let i = 0; i < 3; i++) {
@@ -18,7 +18,9 @@ const TodayEventsCarousel = () => {
                 className={classes.container}
                 style={{ backgroundImage: `url(${imageUrl})` }}
             >
-                <div className={classes.contentWrapper}>
+                <div className={classes.contentWrapper}
+                    onClick={go} data-to="event"
+                >
                     <h2 className={classes.title}>World of Tanks</h2>
                     <p className={classes.txt}>Самый горячий турнир</p>
                     <p className={classes.txt}>29 июня | 20:00</p>
