@@ -1,7 +1,6 @@
 import React from 'react';
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Tabs, withAdaptivity, View, PanelHeaderButton, TabsItem, SizeType, List, CellButton, PanelHeaderBack, HorizontalScroll, Counter } from '@vkontakte/vkui';
+import { Panel, Tabs, withAdaptivity, View, TabsItem, Group, HorizontalScroll } from '@vkontakte/vkui';
 import { Icon24NewsfeedOutline, Icon24FavoriteOutline, Icon24UserCircleOutline } from '@vkontakte/icons';
-import { PanelHeaderContext } from '@vkontakte/vkui/dist/components/PanelHeaderContext/PanelHeaderContext';
 import classes from './Navigation.module.css';
 
 
