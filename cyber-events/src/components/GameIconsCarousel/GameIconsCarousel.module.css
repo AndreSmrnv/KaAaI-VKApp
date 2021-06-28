@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     margin: 20px auto;
 }
 
@@ -16,9 +16,12 @@
     cursor: pointer;
 }
 
-.slide.active {
-    width: 75px;
-    height: 75px;
+.txt {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -0.154px;
+    margin-top: 5px;
 }
 
 .mr25 {
