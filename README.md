@@ -1,2 +1,2 @@
-# KaAaI-VKApp
-Geekbrains - VKApp hakaton
+# KaAaI-VK Mini App
+Geekbrains - VKApp Hackathon
