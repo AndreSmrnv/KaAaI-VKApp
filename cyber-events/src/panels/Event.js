@@ -85,8 +85,7 @@ const Event = props => {
 						style={{
 						backgroundColor: '#000',
 						backgroundImage: `url(${imageUrl})`,
-						backgroundPosition: 'cover',
-						backgroundSize: 'auto',
+						backgroundSize: 'cover',
 						backgroundRepeat: 'no-repeat',
 						}}
 					/>
